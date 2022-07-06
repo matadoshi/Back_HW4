@@ -1,0 +1,50 @@
+﻿@using P225Allup.Areas.Manage.ViewModels.UserViewModels
+@model UserVM
+
+@{
+    ViewData["Title"] = "Create";
+    SelectList selectListItems = new SelectList(ViewBag.Roles);
+}
+
+<div class="login-register-wrapper mt-30">
+    <h4 class="allup-title">Creat New User</h4>
+    <form method="post" class="text-center">
+        <div class="single-form">
+            <input asp-for="Name" placeholder="Name">
+            <span class="text text-danger" asp-validation-for="Name"></span>
+        </div>
+        <div class="single-form">
+            <input asp-for="SurName" placeholder="SurName">
+            <span class="text text-danger" asp-validation-for="SurName"></span>
+        </div>
+        <div class="single-form">
+            <input asp-for="FatherName" placeholder="Father Name">
+            <span class="text text-danger" asp-validation-for="FatherName"></span>
+        </div>
+        <div class="single-form">
+            <input asp-for="Age" placeholder="Age">
+            <span class="text text-danger" asp-validation-for="Age"></span>
+        </div>
+        <div class="single-form">
+            <input asp-for="Email" placeholder="Email">
+            <span class="text text-danger" asp-validation-for="Email"></span>
+        </div>
+        <div class="single-form">
+            <input asp-for="UserName" placeholder="UserName">
+            <span class="text text-danger" asp-validation-for="UserName"></span>
+        </div>
+        <div class="single-form">
+            <select asp-for="Role" class="form-control" asp-items="@selectListItems">
+            </select>
+            <span class="text text-danger" asp-validation-for="Role"></span>
+        </div>
+        <div class="single-form">
+            <input asp-for="Password" placeholder="Password">
+            <span class="text text-danger" asp-validation-for="Password"></span>
+        </div>
+        <div class="single-form">
+            <button type="submit" class="main-btn main-btn-2">Create</button>
+        </div>
+    </form>
+</div>
+
